@@ -1,0 +1,216 @@
+index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Femitech Empire | Creative Designer</title>
+  <meta name="description" content="Femitech Empire — Creative Designer. Graphic design, branding, and video editing for brands and businesses." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="dot"></span>
+      <span>Femitech Empire</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#" id="bookNowBtn">Book Now</a>
+    </nav>
+  </header>
+
+  <main id="home" class="container hero">
+    <div class="hero-left">
+      <p class="kicker">Creative Designer • Graphic Design • Video Editing</p>
+
+      <h1>
+        Femitech Empire
+        <span class="sub">Creative Designer — premium visuals and cinematic edits for brands.</span>
+      </h1>
+
+      <p class="lead">
+        I create clean, high-impact designs and smooth video edits for businesses, brands, and creators.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#" id="quoteBtn">Get a Quote</a>
+        <a class="btn ghost" href="#work">View Portfolio</a>
+      </div>
+
+      <div class="chips">
+        <span>Logos</span><span>Flyers</span><span>Brand kits</span><span>Social media</span><span>Reels</span><span>Video edits</span>
+      </div>
+    </div>
+
+    <!-- Turning / rotating hero display -->
+    <div class="hero-right">
+      <div class="rotator" aria-label="Rotating featured video">
+        <div class="frame">
+          <!-- Upload your showreel as hero.mp4 -->
+          <video class="hero-media" src="hero.mp4" autoplay muted loop playsinline poster="poster.jpg"></video>
+          <div class="scanline"></div>
+          <div class="glow"></div>
+        </div>
+      </div>
+
+      <p class="hint">Upload your showreel as <b>hero.mp4</b> (10–20s, small size).</p>
+    </div>
+  </main>
+
+  <section id="services" class="container section">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Logos, flyers, posters, business cards, banners, album covers, social media designs.</p>
+      </div>
+      <div class="card">
+        <h3>Branding</h3>
+        <p>Brand identity, color & type systems, brand kit, templates for consistent content.</p>
+      </div>
+      <div class="card">
+        <h3>Video Editing</h3>
+        <p>Reels/shorts, YouTube edits, transitions, subtitles, color correction, highlights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio (Images + Video + Other links) -->
+  <section id="work" class="container section">
+    <h2>Portfolio</h2>
+    <p class="muted">Design, video edits, motion, branding and more.</p>
+
+    <div class="filters" role="tablist" aria-label="Portfolio filters">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="design">Design</button>
+      <button class="pill" data-filter="video">Video</button>
+      <button class="pill" data-filter="branding">Branding</button>
+      <button class="pill" data-filter="motion">Motion</button>
+      <button class="pill" data-filter="other">Other</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- IMAGE EXAMPLE -->
+      <button class="pf-item" data-type="image" data-category="design"
+        data-src="work/flyer1.jpg" data-title="Flyer Design" data-desc="Social media flyer design.">
+        <div class="pf-thumb" style="background-image:url('work/flyer1.jpg')"></div>
+        <div class="pf-meta"><b>Flyer Design</b><span>Design</span></div>
+      </button>
+
+      <!-- VIDEO EXAMPLE -->
+      <button class="pf-item" data-type="video" data-category="video"
+        data-src="work/edit1.mp4" data-title="Reel Edit" data-desc="Short-form edit with transitions + captions.">
+        <div class="pf-thumb" style="background-image:url('work/thumb-edit1.jpg')"></div>
+        <div class="pf-meta"><b>Reel Edit</b><span>Video</span></div>
+      </button>
+
+      <!-- BRANDING EXAMPLE -->
+      <button class="pf-item" data-type="image" data-category="branding"
+        data-src="work/logo1.jpg" data-title="Logo Concept" data-desc="Minimal logo exploration.">
+        <div class="pf-thumb" style="background-image:url('work/logo1.jpg')"></div>
+        <div class="pf-meta"><b>Logo Concept</b><span>Branding</span></div>
+      </button>
+
+      <!-- MOTION EXAMPLE (can be mp4 too) -->
+      <button class="pf-item" data-type="video" data-category="motion"
+        data-src="work/motion1.mp4" data-title="Motion Graphic" data-desc="Animated text/logo motion graphic.">
+        <div class="pf-thumb" style="background-image:url('work/thumb-motion1.jpg')"></div>
+        <div class="pf-meta"><b>Motion Graphic</b><span>Motion</span></div>
+      </button>
+
+      <!-- OTHER: external link -->
+      <a class="pf-item link" data-category="other"
+        href="https://drive.google.com/" target="_blank" rel="noreferrer">
+        <div class="pf-thumb ext">
+          <div class="ext-inner">
+            <b>More Projects</b>
+            <span>Open external link</span>
+          </div>
+        </div>
+        <div class="pf-meta"><b>More Projects</b><span>Other</span></div>
+      </a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Portfolio item">
+        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+        <div class="modal-media" id="modalMedia"></div>
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p class="muted" id="modalDesc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="container section">
+    <h2>About</h2>
+    <div class="about">
+      <p>
+        <b>Femitech Empire</b> is a creative brand focused on modern design and clean video editing.
+        I help businesses look premium and communicate clearly with visuals that convert.
+      </p>
+      <ul class="bullets">
+        <li>Fast delivery</li>
+        <li>High-quality, clean aesthetics</li>
+        <li>Content made for engagement</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="container section">
+    <h2>Book / Contact</h2>
+    <p class="muted">This form is free and opens your email app with a ready message.</p>
+
+    <form class="form" id="contactForm">
+      <div class="row">
+        <label>
+          Name
+          <input required name="name" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input required type="email" name="email" placeholder="you@email.com" />
+        </label>
+      </div>
+
+      <label>
+        What do you need?
+        <select name="service">
+          <option>Graphic Design</option>
+          <option>Branding</option>
+          <option>Video Editing</option>
+          <option>Graphic + Video Package</option>
+        </select>
+      </label>
+
+      <label>
+        Message
+        <textarea required name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+      </label>
+
+      <button class="btn" type="submit">Send Message</button>
+
+      <p class="muted small">
+        Or message directly: <a href="#" id="whatsappLink">WhatsApp</a> •
+        <a href="mailto:femitech924@gmail.com">Email</a>
+      </p>
+    </form>
+  </section>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Femitech Empire. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
